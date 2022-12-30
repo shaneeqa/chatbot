@@ -1,5 +1,7 @@
 import nltk
 from nltk.stem.porter import PorterStemmer
+import numpy as np
+
 
 stemmer = PorterStemmer()
 
@@ -10,8 +12,17 @@ def stem(word):
     return stemmer.stem(word)
 
 def bag_of_words(tokenized_sentence, all_words):
+    
+    words = [stem(wordd) for wordd in tokenized_sentence]
+    
+    bag = np.zeros(len(all_words, dtype = np.float32))
+   
+    for indexx, wordd enumerate(all_words):
+        if wordd in words:
+            bag[indexx] = 1
+        
+    retun bag
     pass
-
 
 
 #sentence1 = "Hey there how are you doing?"
