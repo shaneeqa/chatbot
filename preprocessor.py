@@ -15,13 +15,13 @@ def bag_of_words(tokenized_sentence, all_words):
     
     words = [stem(wordd) for wordd in tokenized_sentence]
     
-    bag = np.zeros(len(all_words, dtype = np.float32))
+    bag = np.zeros(len(all_words), dtype = np.float32)
    
-    for indexx, wordd enumerate(all_words):
+    for indexx, wordd in enumerate(all_words):
         if wordd in words:
             bag[indexx] = 1
         
-    retun bag
+    return bag
     pass
 
 
